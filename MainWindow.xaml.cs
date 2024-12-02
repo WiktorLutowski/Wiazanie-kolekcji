@@ -41,9 +41,25 @@ namespace DataBinding
             lstProdukty.ItemsSource = ListaProduktow;
 
 
-            CollectionView widok = (CollectionView) CollectionViewSource.GetDefaultView(lstProdukty.ItemsSource); 
+            CollectionView widok = (CollectionView)CollectionViewSource.GetDefaultView(lstProdukty.ItemsSource);
             widok.SortDescriptions.Add(new SortDescription("Magazyn", ListSortDirection.Ascending));
             widok.SortDescriptions.Add(new SortDescription("Nazwa", ListSortDirection.Ascending));
+
+            widok.Filter = FiltrUzytkownika;
+        }
+
+
+        private bool FiltrUzytkownika(object item)
+        {
+            if (String.IsNullOrEmpty(txtFilter.Text))
+                return true;
+            else
+                return ((item as Produkt).Nazwa.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private void txtFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(lstProdukty.ItemsSource).Refresh();
         }
     }
 }
