@@ -31,6 +31,7 @@
         <Label Content="Magazyn" Grid.Row="3" Grid.Column="0"/>
         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Magazyn}"/>
 
-        <Button Content="Potwierdź" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Padding="50 0" Click="btnPotwierdz_Click"/>
+        <Button Content="Potwierdź" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Padding="30 0" Click="btnPotwierdz_Click"/>
+        <Button Content="Usuń" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Padding="30 0" Click="btnUsun_Click"/>
     </Grid>
 </Window>

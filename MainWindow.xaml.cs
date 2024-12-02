@@ -67,5 +67,10 @@ namespace DataBinding
             Window1 okno = new Window1(this);
             okno.Show();
         }
+
+        public void RemoveProdukt(Produkt item)
+        {
+            ListaProduktow.Remove(item);
+        }
     }
 }

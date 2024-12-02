@@ -3,7 +3,7 @@
 namespace DataBinding
 {
 
-    class Produkt
+    public class Produkt
     {
         public string Symbol { get; set; }
         public string Nazwa { get; set; }

@@ -39,5 +39,15 @@ namespace DataBinding
         {
             Close();
         }
+
+        private void btnUsun_Click(object sender, RoutedEventArgs e)
+        {
+            if(MessageBox.Show("Czy napewno chcesz usunąć ten element?", "Potwierdzenie", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Produkt produktZListy = mainWin.lstProdukty.SelectedItem as Produkt;
+                mainWin.RemoveProdukt(produktZListy);
+                Close();
+            }
+        }
     }
 }
