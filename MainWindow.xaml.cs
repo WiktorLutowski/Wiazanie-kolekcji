@@ -72,5 +72,16 @@ namespace DataBinding
         {
             ListaProduktow.Remove(item);
         }
+
+        public void AddProdukt(Produkt item)
+        {
+            ListaProduktow.Add(item);
+        }
+
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 okno = new Window2(this);
+            okno.Show();
+        }
     }
 }
