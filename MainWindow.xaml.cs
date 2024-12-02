@@ -61,5 +61,11 @@ namespace DataBinding
         {
             CollectionViewSource.GetDefaultView(lstProdukty.ItemsSource).Refresh();
         }
+
+        private void lstProdukty_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Window1 okno = new Window1(this);
+            okno.Show();
+        }
     }
 }
