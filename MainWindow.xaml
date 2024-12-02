@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+        </Window.Resources>
+        <Grid>
         <ListView x:Name="lstProdukty">
             <ListView.View>
                 <GridView>
@@ -17,7 +22,7 @@
                         <GridViewColumn Header="Liczba sztuk">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding LiczbaSztuk}" FontSize="12" Foreground="Green" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding LiczbaSztuk}" FontSize="12" Foreground="Green" FontWeight="Bold" Background="LightGray" TextAlignment="Right"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
