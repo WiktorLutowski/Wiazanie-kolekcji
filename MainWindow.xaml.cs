@@ -43,6 +43,7 @@ namespace DataBinding
 
             CollectionView widok = (CollectionView) CollectionViewSource.GetDefaultView(lstProdukty.ItemsSource); 
             widok.SortDescriptions.Add(new SortDescription("Magazyn", ListSortDirection.Ascending));
+            widok.SortDescriptions.Add(new SortDescription("Nazwa", ListSortDirection.Ascending));
         }
     }
 }
