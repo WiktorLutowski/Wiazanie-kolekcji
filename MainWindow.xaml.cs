@@ -46,6 +46,8 @@ namespace DataBinding
             widok.SortDescriptions.Add(new SortDescription("Nazwa", ListSortDirection.Ascending));
 
             widok.Filter = FiltrUzytkownika;
+
+            gridProdukt.DataContext = new Produkt("", "", 0, "");
         }
 
 
@@ -64,24 +66,21 @@ namespace DataBinding
 
         private void lstProdukty_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Window1 okno = new Window1(this);
-            okno.Show();
-        }
-
-        public void RemoveProdukt(Produkt item)
-        {
-            ListaProduktow.Remove(item);
-        }
-
-        public void AddProdukt(Produkt item)
-        {
-            ListaProduktow.Add(item);
+            gridProdukt.DataContext = (Produkt)lstProdukty.SelectedItem;
         }
 
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            Window2 okno = new Window2(this);
-            okno.Show();
+            ListaProduktow.Add((Produkt)gridProdukt.DataContext);
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Czy napewno chcesz usunąć ten element?", "Potwierdzenie", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Produkt produktZListy = lstProdukty.SelectedItem as Produkt;
+                ListaProduktow.Remove(produktZListy);
+            }
         }
     }
 }
